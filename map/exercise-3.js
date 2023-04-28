@@ -19,6 +19,7 @@ to generate a button:
 https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement
 
 */
+console.group("group chat");
 const footer = document.querySelector(".foo");
 const buttons = [
   {
@@ -31,13 +32,14 @@ const buttons = [
     text: "Button Text 3",
   },
 ];
-
+console.log(1);
 const buttonElements = buttons.map((x) => {
   return `   <button>${x.text}</button>`;
 });
 console.log(buttonElements);
-
+console.log(2);
 footer.innerHTML = buttonElements;
+console.groupEnd;
 
 /*
 const buttonElements = buttons.map((item) => {
