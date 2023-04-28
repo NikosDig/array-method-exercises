@@ -19,19 +19,30 @@ to generate a button:
 https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement
 
 */
-
+const footer = document.querySelector(".foo");
 const buttons = [
   {
-    text: 'Button Text 1',
+    text: "Button Text 1",
   },
   {
-    text: 'Button Text 2',
+    text: "Button Text 2",
   },
   {
-    text: 'Button Text 3',
+    text: "Button Text 3",
   },
 ];
 
-const buttonElements = null; // Replace null and add .map code here
-
+const buttonElements = buttons.map((x) => {
+  return `   <button>${x.text}</button>`;
+});
 console.log(buttonElements);
+
+footer.innerHTML = buttonElements;
+
+/*
+const buttonElements = buttons.map((item) => {
+  const newButton = document.createElement('button');
+  newButton.innerText = item.text;
+  return newButton;
+});
+*/
