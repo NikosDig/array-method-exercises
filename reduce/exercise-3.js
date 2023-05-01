@@ -18,27 +18,35 @@ Tip: Use 'toLowerCase()' when setting the team's key
 
 const teams = [
   {
-    name: 'Hawks',
+    name: "Hawks",
     score: 60,
     isWinner: true,
   },
   {
-    name: 'Dolphins',
+    name: "Dolphins",
     score: 50,
     isWinner: true,
   },
   {
-    name: 'Falcons',
+    name: "Falcons",
     score: 90,
     isWinner: false,
   },
   {
-    name: 'Bears',
+    name: "Bears",
     score: 90,
     isWinner: false,
   },
 ];
 
-const winningTeams = null; // Replace null and add .reduce code here
+const winningTeams = teams.reduce((curentTeam, team) => {
+  if (team.isWinner) {
+    curentTeam[team.name.toLowerCase()] = team.score;
+  }
+  return curentTeam;
+}, {});
 
 console.log(winningTeams);
+
+// remember to put the return AFTER the if statement.... or it will not work
+// it will work without the toLowerCase() but you need it eventually
