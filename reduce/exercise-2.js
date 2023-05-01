@@ -20,22 +20,40 @@ the items in stock ('itemsInStock') by the price ('price')
 
 const items = [
   {
-    name: 'Apple',
+    name: "Apple",
     itemsInStock: 10,
     price: 5.99,
   },
   {
-    name: 'Banana',
+    name: "Banana",
     itemsInStock: 5,
     price: 3.99,
   },
   {
-    name: 'Orange',
+    name: "Orange",
     itemsInStock: 2,
     price: 3.99,
   },
 ];
 
-const totalCostOfItems = null; // Replace null and add .reduce code here
+const totalCostOfItems = items.reduce((total, item) => {
+  total += item.price * item.itemsInStock;
+  return total;
+}, 0);
+/*
+const totalCostOfItems = items.reduce((totalCost, item) => {
+  totalCost += item.itemsInStock * item.price;
+  return totalCost;
+}, 0);
 
+// You could destructure the properties from 'item'. This can
+// arguably become more readable.
+const totalCostOfItemsDestructured = items.reduce(
+  (totalCost, { itemsInStock, price }) => {
+    totalCost += itemsInStock * price;
+    return totalCost;
+  },
+  0
+);
+*/
 console.log(totalCostOfItems);
