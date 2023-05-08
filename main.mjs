@@ -1,4 +1,4 @@
-import newCalculateName, { addNumbers } from "./modules.mjs";
+import newCalculateName, { addNumbers as first } from "./modules.mjs";
 
 newCalculateName();
-addNumbers();
+first();
